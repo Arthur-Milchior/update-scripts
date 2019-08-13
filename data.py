@@ -57,10 +57,13 @@ pairs = [# We don't rebase commented, in order to verify which
     ("browserColumns", "browserExtraColumns"),
     ("browserForNote", "advancedBrowser"),
     ("browserExtraColumns", "advancedBrowser"),
+    ("browserColumns", "fieldsInBrowser"),
+    ("fieldsInBrowser", "advancedBrowser"),
 
     ("baseFork", "addedToday"), # Debugged
     ("baseFork", "allowEmptyFirstField"),
     ("baseFork", "batchEdit"),#works
+    ("baseFork", "browserFromReviewer"),
     ("baseFork", "changeDeckPrefix"),# works
     ("baseFork", "changeTypeOfNoteWithoutSync"), # to test
     ("baseFork", "colors"),

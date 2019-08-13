@@ -19,7 +19,7 @@ def currentlyRebasingOn(r):
         return f.readline().strip()
 
 
-r = Repo("source")
+r = Repo("../source")
 def ignoreSomeRebase():
     while True:
         rebasingOn = currentlyRebasingOn(r)
@@ -48,8 +48,8 @@ def execute(tag, callable):
 
 with open("tested", "rt") as f:
     tested = f.readlines()
-print(f"""tested are:
-{tested}""")
+# print(f"""tested are:
+# {tested}""")
 
 
 def testSucceed():
@@ -58,7 +58,7 @@ def testSucceed():
         print(f"{currentHash} was already succesfully tested")
         return True
     print(f"{currentHash} is not yet succesfully tested")
-    os.chdir("source")
+    os.chdir("../source")
     os.system("./tools/build_ui.sh")
     returned = os.system("./tools/tests.sh")
     if returned != 0:
@@ -68,7 +68,7 @@ def testSucceed():
         print("Some <<<< found")
         return False
 
-    os.chdir("..")
+    os.chdir("../update")
     print(f"{currentHash} is succesfully tested")
     with open("tested", "at") as f:
         tested.append(currentHash)
