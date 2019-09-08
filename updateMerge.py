@@ -3,10 +3,12 @@
 import os
 import sys
 import time
+
 from git.exc import GitCommandError
+
 from data import *
-from utils import *
 from mergeMethods import *
+from utils import *
 
 try:
     for parent, child in pairs:
@@ -15,14 +17,14 @@ except Dirty:
     pass
 
 
-for commit in children:
+for commit in leaves:
     if not r.is_ancestor(commit, "fork"):
         r.git.checkout(commit)
         testAndRaise()
         r.git.checkout("fork")
         testAndRaise()
         print(f"Trying to merging {commit} into fork")
-        r.git.merge(commit)
+        r.git.merge(commit, "--no-ff")
         print(f"Merge {commit} into fork suceeded")
 
 if not r.is_ancestor("fork", f"milchior/fork"):

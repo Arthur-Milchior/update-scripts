@@ -3,10 +3,12 @@
 import os
 import sys
 import time
+
 from git.exc import GitCommandError
+
 from data import *
-from utils import *
 from mergeMethods import *
+from utils import *
 
 # try:
 #     for parent, child in pairs:
@@ -20,7 +22,7 @@ for commit in children:
         r.git.checkout(commit)
         testAndRaise()
         print(f"Trying to push {commit} on github")
-        execute("push", lambda: r.git.push("--force", "milchior", child))
+        execute("push", lambda: r.git.push("--force", "milchior", commit))
         print(f"pushed {commit}")
     else:
         print(f"«{commit}» already pushed")
