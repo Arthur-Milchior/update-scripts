@@ -3,6 +3,14 @@ toIgnoreMerge={
 }
 toIgnoreRebase={
     "62402c757aa516a5480ff12170dd17ad215befe4",
+    "0e240be6528e593ca383d3923da31152c5d9e053",
+    "bee2fc1166fc7edd67fbfd2250d1e1bf8b3de9e9",
+    "db724b1d2797b5bcaf5fd967806bcd1a5547690c",
+    "904667d1f245a3f8eae708cea674a221eeee35ca",
+    "95bbe4c8bb1bb2dc4390a3c43a55a9f5291ce4e6",
+    "73980360f9aa7f163b7830040f59af9bb605a91e",
+    "6814460d13c4a2f17bcc853e75f90955808b78f5",
+    "1d0bbebbb4829cb8191be6ddd9f442d97e7241b6",
     "d60f080818206d59011d9233ccbd088165ac37bf",
     "213c5ebe5de6d5a9b95204510395492556b7d452",
     "34532c02f280470a1202611535bc91f8f552b22c",
@@ -115,6 +123,7 @@ pairs = [# We don't rebase commented, in order to verify which
     #("browserExtraColumns", "advancedBrowser"),
     ("browserColumns", "fieldsInBrowser"),
     #("fieldsInBrowser", "advancedBrowser"),
+    ("baseFork", "updateAddons"),
 
     ("baseFork", "addedToday"), # Debugged
     ("baseFork", "allowEmptyFirstField"),
@@ -142,7 +151,7 @@ pairs = [# We don't rebase commented, in order to verify which
     ("baseFork", "quickerRenderingOfQA"), # works
     ("baseFork", "tagMissingMedia"),# debugged, with todo
     #("baseFork", "keepMoreFiles"),
-    ("baseFork", "multiColumnEditor"), #debugged
+    ("quickerChangeModel", "multiColumnEditor"), #debugged
     ("multiColumnEditor", "frozenFields"), # debugged
 ]
 

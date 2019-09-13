@@ -1,5 +1,6 @@
 import sys
 
+from sortMd import sortDifference
 from utils import *
 
 
@@ -9,6 +10,7 @@ def rebase(*args, **kwargs):
         r.git.rebase(*args, **kwargs)
     except GitCommandError:
         ignoreSomeRebase()
+        sortDifference()
         if r.is_dirty():
             raise
 

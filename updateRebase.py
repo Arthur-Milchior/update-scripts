@@ -9,7 +9,7 @@ from git.exc import GitCommandError
 from data import *
 from mergeMethods import *
 from rebaseMethods import *
-from sortMd import sort
+from sortMd import sortDifference
 from utils import *
 
 rebased = set()
@@ -26,6 +26,7 @@ for parent, child in pairs:
         rebased.add(child)
         print(f"rebasing {parent} into {child} if needed")
         rebaseOnto(parent, child)
+        sortDifference()
 
 execute("checkout fork", lambda: r.git.checkout("fork"))
 for branch in leaves:
@@ -35,9 +36,9 @@ for branch in leaves:
     testAndRaise()
     try:
         execute(f"merge {branch}", lambda: r.git.merge(branch, "-m", f"merge {branch}", "--no-ff"))
-        sort("../source/difference.md")
+        sortDifference()
     except GitCommandError:
-        sort("../source/difference.md")
+        sortDifference()
         isort()
         testAndRaise()
         r.git.add("-u", ".")

@@ -1,3 +1,6 @@
+import os.path
+
+
 def newSection(line):
     return line.startswith("## ")
 
@@ -7,6 +10,8 @@ def toDelete(line):
             return True
 
 def sort(fileName):
+    if not os.path.isfile(fileName):
+        return
     with open(fileName, "r") as f:
         lines = f.readlines()
     sections = {}
@@ -27,3 +32,8 @@ def sort(fileName):
     output = "".join([sections[key] for key in sorted(sections)])
     with open(fileName, "w") as f:
         f.write(output)
+
+def sortDifference():
+    sort("../source/difference.md")
+
+sortDifference()
