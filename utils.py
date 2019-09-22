@@ -140,4 +140,6 @@ def update(child):
             pass
 
 def isort():
+    if not r.is_ancestor("factorized", "HEAD"):
+        return
     os.system("isort -rc -y -s runanki -s aqt/forms")

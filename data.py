@@ -3,6 +3,26 @@ toIgnoreMerge={
 }
 toIgnoreRebase={
     "62402c757aa516a5480ff12170dd17ad215befe4",
+    "909c0570111ed30fbdc11be9427615ba6f30d5aa",
+    "848f518a258cf9e00167b811c7f9fff2ab8e3de3",
+    "6585ad507673cdd6aadbc20ff95b6293fa080f0f",
+    "179317261bbb9cb0ef12e70756eb05a887500e04",
+    "416a77323a01acb4029f0e363f5be41fd7645f60",
+    "416a77323a01acb4029f0e363f5be41fd7645f60",
+    "cfa57b8d9a44e521edc51da90e2c2db01379631a",
+    "58a235d5c80269d80f9bdb32555756ceb258f70a",
+    "7a20d4c7b514e92a29178724315c70438a76ca29",
+    "6eea973e4a21f44a45c14f3beb0ca706d7617b67",
+    "b3e6fb6c9f2a870d4c30bd659c0f666bc1463847",
+    "3fa6c123a9e94c49971c9157ba164dd58cbc6c75",
+    "440e849d2cd162f44c51eac019580c37472649b2",
+    "75145a930c43555904d36806164d8dad2f872328",
+    "b22a30c79bd096b3dc2d2a37ba7600fb01c6c5ac",
+    "4f1b1d60c68b0b97768f55094258e5f73640ee5b",
+    "149390c7538995dea6db9f1367358203812c15ce",
+    "44d7a77556999ae73ad7024a56d606dd1d9ca874",
+    "a149a421efe7140569f95c71387b4bc725a871dd",
+    "25740e6a9c8c9389b72cb75686495d5408ec2d52",
     "0e240be6528e593ca383d3923da31152c5d9e053",
     "bee2fc1166fc7edd67fbfd2250d1e1bf8b3de9e9",
     "db724b1d2797b5bcaf5fd967806bcd1a5547690c",
@@ -146,6 +166,7 @@ pairs = [# We don't rebase commented, in order to verify which
     ("baseFork", "limitCardsNumberCountingEverything"),
     ("baseFork", "longTermBackup"),
     ("baseFork", "newlineJson"),# debugged
+    ("baseFork", "clayoutWithCloze"),
     ("baseFork", "multipleWindow"),# debugged, with todo
     ("baseFork", "postponeDays"),# debugged
     ("baseFork", "quickerRenderingOfQA"), # works
@@ -153,6 +174,7 @@ pairs = [# We don't rebase commented, in order to verify which
     #("baseFork", "keepMoreFiles"),
     ("quickerChangeModel", "multiColumnEditor"), #debugged
     ("multiColumnEditor", "frozenFields"), # debugged
+    ("baseFork", "betterCheckEmptyCard")
 ]
 
 parents = {p[0] for p in pairs}
