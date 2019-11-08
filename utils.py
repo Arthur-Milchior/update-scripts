@@ -3,6 +3,7 @@ import os
 from git import Repo
 from git.exc import GitCommandError
 
+from consts import push
 from data import *
 
 
@@ -105,9 +106,9 @@ def testSucceed():
         return True
     print(f"{currentHash} is not yet succesfully testeds")
     os.system("./tools/build_ui.sh")
-    # returned = os.system("./tools/tests.sh")
-    # if returned != 0:
-    #     return False
+    returned = os.system("./tools/tests.sh")
+    if returned != 0:
+        return False
 
     os.chdir("../update")
     print(f"{currentHash} is succesfully tested")
@@ -132,7 +133,7 @@ def update(child):
         try:
             #if int(time.strftime("%H",time.localtime(time.time())))>10: #debugging fails before 10h
             testAndRaise()
-            execute("push", lambda: r.git.push("--force", "milchior", child))
+            if push:execute("push", lambda: r.git.push("--force", "milchior", child))
             pass
         except GitCommandError:
             #execute("set-upstream", lambda: r.git.branch(f"--set-upstream-to=milchior/{child}"))

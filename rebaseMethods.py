@@ -6,6 +6,10 @@ from utils import *
 
 def rebase(*args, **kwargs):
     """If dirty want to ignore this particular rebase, we should avoid raising an exception"""
+    if currentlyRebasingOn(r):
+        raise Exception("Attempt to do a rebase during a rebase")
+    if currentlyMergingOn(r):
+        raise Exception("Attempt to do a rebase during a merge")
     try:
         r.git.rebase(*args, **kwargs)
     except GitCommandError:

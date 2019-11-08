@@ -6,6 +6,7 @@ import time
 
 from git.exc import GitCommandError
 
+from consts import push
 from data import *
 from mergeMethods import *
 from utils import *
@@ -29,4 +30,4 @@ for commit in leaves:
 
 if not r.is_ancestor("fork", f"milchior/fork"):
     testAndRaise()
-    execute("push", lambda: r.git.push( "milchior", "fork"))
+    if push:execute("push", lambda: r.git.push( "milchior", "fork"))

@@ -2,6 +2,10 @@ from utils import *
 
 
 def mergeParentInChild(parent, child):
+    if currentlyRebasingOn(r):
+        raise Exception("Attempt to do a merge during a rebase")
+    if currentlyMergingOn(r):
+        raise Exception("Attempt to do a merge during a merge")
     if  r.is_ancestor(parent, child):
         print(f"{parent} is contained in {child}")
     else:

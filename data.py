@@ -2,7 +2,57 @@ toIgnoreMerge={
     "291bb5d37e81461a89af9a3625c7aea87cff8216",
 }
 toIgnoreRebase={
-    "62402c757aa516a5480ff12170dd17ad215befe4",
+    "488ff6a96628d3451dbe286b4bb74b6c14cd28e7",
+    "c741ae21e99c4df649e9f4b5f3428bf3e035c19b",
+    "f93a8e5f39a1b68ade86444d9f3faa1d46abb784",
+    "910029aba2c603c98551674e3980285cc3150f46",
+    "a527c6416ebf99fe9acf0f72ccd88e9cec0de842",
+    "a4170691c2222c23acd1b4cae1972bf8dc4fba44",
+    "fe920c874ac0664b5dbec95d40ba6f7524db41f3",
+    "3519bf03a18d4dce90a50711d3f7c4e630e4cb97",
+    "ea8ddfa22ccd56b17a694bb83797153428c3d7d3",
+    "f658efe2eba3ad3a5695de7a7f3c4aeb440bd508",
+    "a64e7058f82ddc61e77762e3d3798aca52c6c3bb",
+    "083a482417dfa9585df7cc301383dceabdf3f83f",
+    "bf6c31a253b3a4be43300cf7fc33ff5f45b4e5e9",
+    "76d4fb6fd6329b9dbd2530a8f1539dcc576b6278",
+    "a90ec3e644224731870d54fec846844831bd5339",
+    "44e1eaf48beee8bbf034b82952f07d3465df567c",
+    "cd84c2a5c55bd07f50afb9da0054a4c9b838faec",
+    "8e35f82f8572b331f79874964a698b4aab2fe7e2",
+    "0b36a57eec2d2c2bddc4e2347fb70b67faeb6d62",
+    "96f5644617311e3828481c3c0f0644435ff234ae",
+    "0f1e4bc9d7c9bc13ca40520a7118a21b69106fca",
+    "9882d3cf72976a0172b70edec6cd1f7551379768",
+    "8d4328fab6c9cd52e40b204db5feea6e756bf005",
+    "a1706e078fe2915e65708675ba5ad0b7107521a6",
+    "6613dadcaa6e32026949b98f28b8f2bfea448cca",
+    "1c60724cf38e04c687288631b7d4fa5d4978f859",
+    "c0f020dff3a853781cec80374a526514076ea081",
+    "c6fea8671d817ae740168715ebbf1a79a4e12710",
+    "a121dbdbb78b35e3c97696d463cc77cb8407bc52",
+    "7bf5963f31bb2d86602e46823757680df63c2789",
+    "20bcb5da24412ce2dd6b2054adfb6df9d094b08a",
+    "fabcd38b5ec5a35bbd42a19e153575a5123cc3b1",
+    "7f4806958caa7cf6f6a013c6564c734899da4a6e",
+    "03ba9fa9ab503fe5dacbda5949f382e07092962d",
+    "9a78715ad1d8a0824a48015c7fa9558c3c3cfe98",
+    "e27b6180712ea09fb0ad3c8c9a43809eb99a9664",
+    "91e23027e5e090a27439553d1be3f98f20678f78",
+    "a5be5d326380d55ac9a5f044546f503c167aa1d3",
+    "a5be5d326380d55ac9a5f044546f503c167aa1d3",
+    "c661b35171ae703baf2c5b6b93543c78c56dd26f",
+    "9289b5d5239d8c1a304604e13c838ed271e1abb1",
+    "0c3b43baf7ee3722316752180caa0f72017d6cec",
+    "4eb7dee204e049e789f516900c08f2987fd7bed2",
+    "eb6081178eead7c5d8a1d2c47386c56703c26961",
+    "875d173ff58e452445ed880042346efa938eabeb",
+    "f7b18395529600235c581979db4db3e93a1c662d",
+    "6f9e1412be7258234ecfbe79584781b442a0bb24",
+    "da7dbdc902773abfa405ae935de2a0c23553fc1d",
+    "ab142b4d38e508df97a3167087515f5cb7e00d09",
+    "69e3cbd2a5be2de1eaaa88fc76ce4ecfa8650493",
+    "3283ab4cccd37a04f211e1b227133ae1f6194ae6",
     "909c0570111ed30fbdc11be9427615ba6f30d5aa",
     "848f518a258cf9e00167b811c7f9fff2ab8e3de3",
     "6585ad507673cdd6aadbc20ff95b6293fa080f0f",
@@ -123,7 +173,7 @@ pairs = [# We don't rebase commented, in order to verify which
     ("explodeFixIntegrity", "usableEmptyCards"), # debugged
     ("explodeFixIntegrity", "correctNewDue"), # Hard to debug
     ("explodeFixIntegrity", "quickerChangeModel"),# updated
-    ("quickerChangeModel", "explainDeletion"),
+    ("quickerChangeModel", "explainEmptyCard"),
 
     # Add-ons dealing with card generation
     #("quickerChangeModel", "bigChangeModel"),
@@ -150,7 +200,7 @@ pairs = [# We don't rebase commented, in order to verify which
     ("baseFork", "batchEdit"),#works
     ("baseFork", "browserFromReviewer"),
     ("baseFork", "changeDeckPrefix"),# works
-    ("baseFork", "changeTypeOfNoteWithoutSync"), # to test
+    #("baseFork", "changeTypeOfNoteWithoutSync"), # to test
     ("baseFork", "colors"),
     ("colors", "deckBrowserEnhanced"),
     ("baseFork", "compileLatex"),#works
@@ -158,7 +208,7 @@ pairs = [# We don't rebase commented, in order to verify which
     ("quickerChangeModel", "consistentCardGeneration"),
     ("baseFork", "copyNote"),# Debugged
     ("baseFork", "emptyNewCard"), # works
-    ("baseFork", "explainDeletion"), # debugged
+    #("baseFork", "explainDeletion"), # debugged
     ("baseFork", "forkCommented"), # Only documentation change
     ("baseFork", "removeMapTo"),
     ("baseFork", "keepFieldsInAddCard"),# Debugged
@@ -171,10 +221,15 @@ pairs = [# We don't rebase commented, in order to verify which
     ("baseFork", "postponeDays"),# debugged
     ("baseFork", "quickerRenderingOfQA"), # works
     ("baseFork", "tagMissingMedia"),# debugged, with todo
+    ("baseFork", "didInFinder"),
     #("baseFork", "keepMoreFiles"),
     ("quickerChangeModel", "multiColumnEditor"), #debugged
     ("multiColumnEditor", "frozenFields"), # debugged
-    ("baseFork", "betterCheckEmptyCard")
+    ("baseFork", "betterCheckEmptyCard"),
+    ("baseFork", "avoidOverdue"),
+    ("baseFork", "reorderNew"),
+    ("baseFork", "mergeDecks"),
+    ("explodeFixIntegrity", "editNewModelWithoutFullSync"),
 ]
 
 parents = {p[0] for p in pairs}

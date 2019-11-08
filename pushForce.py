@@ -6,6 +6,7 @@ import time
 
 from git.exc import GitCommandError
 
+from consts import push
 from data import *
 from mergeMethods import *
 from utils import *
@@ -22,11 +23,11 @@ for commit in children:
         r.git.checkout(commit)
         testAndRaise()
         print(f"Trying to push {commit} on github")
-        execute("push", lambda: r.git.push("--force", "milchior", commit))
+        if push: execute("push", lambda: r.git.push("--force", "milchior", commit))
         print(f"pushed {commit}")
     else:
         print(f"«{commit}» already pushed")
 
 if not r.is_ancestor("fork", f"milchior/fork"):
     testAndRaise()
-    execute("push", lambda: r.git.push( "milchior", "fork"))
+    if push:execute("push", lambda: r.git.push( "milchior", "fork"))

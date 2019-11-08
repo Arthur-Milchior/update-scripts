@@ -6,6 +6,7 @@ import time
 from git import Repo
 from git.exc import GitCommandError
 
+from consts import push
 from data import *
 from mergeMethods import *
 from rebaseMethods import *
@@ -24,7 +25,7 @@ for parent, child in pairs:
         mergeParentInChild(parent, child)
     else:
         rebased.add(child)
-        print(f"rebasing {parent} into {child} if needed")
+        print(f"rebasing (if necessary) {parent} into {child} if needed")
         rebaseOnto(parent, child)
         sortAll()
 
@@ -49,4 +50,5 @@ for branch in leaves:
 
 testAndRaise()
 if not r.is_ancestor("fork", f"milchior/fork"):
-    execute("push", lambda: r.git.push("--force", "milchior", "fork"))
+    if push:
+        execute("push", lambda: r.git.push("--force", "milchior", "fork"))
