@@ -1,4 +1,5 @@
 import sys
+import time
 
 from sortMd import sortAll
 from utils import *
@@ -33,12 +34,6 @@ def rebaseOnto(parent, child):
         execute(f"checkout {child}", lambda: r.git.checkout(child))
         execute(f"rebase {child} onto {parent}", lambda: rebase("--onto", parent, f"milchior/{parent}", child))
         return
-    for oldCommit in rebaseOver:
-        if parent=="baseFork" and r.is_ancestor(oldCommit, child):
-            execute(f"rebase {child} on some fixed baseFork", lambda: rebase("--onto", parent, oldCommit, child))
-            return
-        else:
-            print(f"{oldCommit} is not ancestor of {child} ")
     execute(f"checkout {child}", lambda: r.git.checkout(child))
     print(f"Can't rebase {child} onto {parent} as it's not descendant of milchior/{parent}, and not of {parent} either")
     rebaseChildOnParent(parent, child, parentTested=True)
@@ -49,6 +44,7 @@ def rebaseChildOnParent(parent, child, parentTested=False):
     if r.is_ancestor(parent, child):
         print(f"{child} already rebased on {parent}")
     else:
+        time.sleep(1)
         execute(f"checkout {child}", lambda: r.git.checkout(child))
         execute(f"rebase {child} on some fixed baseFork", lambda: rebase(parent))
     update(child)

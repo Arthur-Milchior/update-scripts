@@ -143,4 +143,4 @@ def update(child):
 def isort():
     if not r.is_ancestor("factorized", "HEAD"):
         return
-    os.system("isort -rc -y -s runanki -s aqt/forms")
+    os.system("isort -rc -y -s runanki -s aqt/forms -s anki/__init__.pyisort -rc -y -s runanki -s aqt/forms -s anki/__init__.py ")
