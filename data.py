@@ -2,8 +2,13 @@ toIgnoreMerge={
     "291bb5d37e81461a89af9a3625c7aea87cff8216",
 }
 toIgnoreRebase={
+    "938565b32cc5fcc09aa1b67869b9afe62d3e6680",
     "488ff6a96628d3451dbe286b4bb74b6c14cd28e7",
     "ff97303f0b16ec512c089ca111b7feff590b070b",
+    "dfabd28cbd6cc6fd5dd52a1db1a83fb743a767d4",
+    "8f408ca785b7bf81f347d2a27b3ca883a01e5713",
+    "bf910741a23316362684102b4174416ba3816e6f",
+    "6e6e3986aa4dd6648bf8a4918970ba4944fb1f7c",
     "b8bcb1d07e944be80f6024c7ca08cb6bbd272ded",
     "3bf42e3a6c462c17f6b8615279d3d80e56db8c44",
     "7632825ac74c19195954b6ccd0d5258daf3649f4",
@@ -1128,6 +1133,18 @@ toIgnoreRebase={
     "8443f4ab96b4bee8c6daea0699a3231a71d5d764",
     "d198d8b7daf936fbcc33a6535af48e08b7bb1f99",
     "d11fdf5ff298ad191c56dd4f50fb493052b614aa",
+    "f6ae4381e433901e697b550dbc6c28f83ce190c8",
+    "92710f873914fd1288b06e31bfb63c796257b240",
+    "92710f873914fd1288b06e31bfb63c796257b240",
+    "10bc68ff7bfa3ab2a821eeacc7dc053ba41b6c67",
+    "3dbe43b8c2989ea5e2bc6c8a89c0247ce6d1cd64",
+    "0f86dc2a38bb2f83926d9c56b9ff454d89259e25",
+    "e2f31d541f6405a1fe9a2511b4b14cd599ec0fca",
+    "9ac1c82a2a80878ccd0ba7013aade08719647cf2",
+    "dc27d64c88d9f145e87c842f152f757c7d909128",
+    "f1d6946bbeadefebcfef87a6a576313d367124de",
+    "2c61824479190ad46c0271fb1fb387238944cd7c",
+    "fde9cf4ce19e042488c6f2b9450b8562cad116ee",
     "c1060647636694202ceeaa77d0c9a52b9b7d9aa2",
     "0b9993cb39f26fa507361c6eb40c81c43216e115",
     "e9a70bedf53908fc0b519aa3f24f4839d6fa4666",
@@ -1136,6 +1153,7 @@ pairs = [# We don't rebase commented, in order to verify which
     # comments are related to something which has changed.
     # ("elmes/master", "intToConstant"),
 
+    ("master", "intToConstant"),
     ("intToConstant", "commented"),
     ("commented", "moreTest"),
     ("moreTest", "factorized"),
@@ -1203,6 +1221,7 @@ pairs = [# We don't rebase commented, in order to verify which
     ("baseFork", "reorderNew"), # splitted; without comment
     ("baseFork", "mergeDecks"), # splitted; without comment
     ("baseFork", "TexImageInBrowser"),
+    ("baseFork", "changeAllTex"),
 ]
 
 parents = {p[0] for p in pairs}
